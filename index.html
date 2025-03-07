@@ -3,10 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Pink Background</title>
+    <title>dla wujek matolousz</title>
     <style>
         body {
-            background-color: pink;
+            background-color: ;
             font-family: Arial, sans-serif;
             margin: 0;
             padding: 0;
@@ -21,8 +21,7 @@
 <body>
 </body>
 <html>
-<h1>Hello everyone</h1>
-<p>Im new to this, so offer advice please.</p>
+<h1>If you aren't my uncle, go away pls</h1>
 </body>
 </html>
 <!DOCTYPE html>
@@ -30,14 +29,95 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Open ataBook in a New Window</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #f1f1f1;
+            margin: 0;
+        }
+
+        .envelope {
+            width: 300px;
+            height: 180px;
+            background-color: #f2e4c7;
+            position: relative;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: all 0.3s ease-in-out;
+        }
+
+        .envelope .flap {
+            width: 100%;
+            height: 50%;
+            background-color: #f2e4c7;
+            position: absolute;
+            top: 0;
+            left: 0;
+            clip-path: polygon(0 0, 100% 0, 100% 100%, 50% 70%, 0 100%);
+            transition: transform 0.3s ease-in-out;
+        }
+
+        .envelope.open .flap {
+            transform: rotateX(180deg);
+        }
+
+        .message {
+            display: none;
+            padding: 20px;
+            text-align: center;
+            color: #333;
+            background-color: #fff;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 80%;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .envelope.open .message {
+            display: block;
+        }
+
+        .envelope .body {
+            width: 100%;
+            height: 100%;
+            background-color: #fff;
+            position: absolute;
+            top: 0;
+            left: 0;
+            border-radius: 8px;
+        }
+
+        h1 {
+            margin: 0;
+            font-size: 24px;
+            color: #333;
+        }
+    </style>
 </head>
 <body>
 
-    <h1>Open ataBook Website</h1>
+    <div class="envelope" onclick="toggleEnvelope()">
+        <div class="flap"></div>
+        <div class="body"></div>
+        <div class="message">
+            <h1>Wujek Matolousz</h1>
+            <p>Happy Birthday! Love from Ania, Julia and siostra</p>
+        </div>
+    </div>
 
-    <!-- Button to open ataBook in a new window -->
-    <button onclick="window.open('https://atabook.org/', '_blank')">Open ataBook</button>
+    <script>
+        function toggleEnvelope() {
+            const envelope = document.querySelector('.envelope');
+            envelope.classList.toggle('open');
+        }
+    </script>
 
 </body>
 </html>
